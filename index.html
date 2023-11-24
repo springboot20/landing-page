@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/styles/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="./public/assets/images/logo.svg"
+      type="image/x-icon"
+    />
+    <!-- <script
+      src="https://kit.fontawesome.com/0e5d7b974c.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <title>Landing Page Design</title>
+  </head>
+
+  <body>
+    <nav
+      class="nav-bg fixed top-0 left-0 z-40 right-0 w-full mx-auto sm:px-2 h-28 lg:px-4"
+    >
+      <div class="'relative flex h-full items-center justify-between px-4">
+        <div class="absolute inset-y-0 flex items-center sm:hidden">
+          <button
+            type="button"
+            id="bars-icon"
+            class="inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-gray-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              class="block h-10 w-10 fill-gray-600"
+            >
+              <path
+                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+              />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            id="close-icon"
+            class="hidden items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 bg-gray-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+              class="block h-10 w-10 fill-gray-600"
+            >
+              <path
+                d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="flex flex-1 sm:flex-none items-center justify-center sm:justify-start"
+        >
+          <a href="/" class="space-x-3 inline-flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 512"
+              class="fill-gray-600 h-12"
+            >
+              <path
+                d="M313.2 47.5c1.2-13 21.3-14 36.6-8.7.9.3 26.2 9.7 19 15.2-27.9-7.4-56.4 18.2-55.6-6.5zm-201 6.9c30.7-8.1 62 20 61.1-7.1-1.3-14.2-23.4-15.3-40.2-9.6-1 .3-28.7 10.5-20.9 16.7zM319.4 160c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-159.7 0c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm318.5 163.2c-9.9 24-40.7 11-63.9-1.2-13.5 69.1-58.1 111.4-126.3 124.2.3.9-2-.1 24 1 33.6 1.4 63.8-3.1 97.4-8-19.8-13.8-11.4-37.1-9.8-38.1 1.4-.9 14.7 1.7 21.6 11.5 8.6-12.5 28.4-14.8 30.2-13.6 1.6 1.1 6.6 20.9-6.9 34.6 4.7-.9 8.2-1.6 9.8-2.1 2.6-.8 17.7 11.3 3.1 13.3-14.3 2.3-22.6 5.1-47.1 10.8-45.9 10.7-85.9 11.8-117.7 12.8l1 11.6c3.8 18.1-23.4 24.3-27.6 6.2.8 17.9-27.1 21.8-28.4-1l-.5 5.3c-.7 18.4-28.4 17.9-28.3-.6-7.5 13.5-28.1 6.8-26.4-8.5l1.2-12.4c-36.7.9-59.7 3.1-61.8 3.1-20.9 0-20.9-31.6 0-31.6 2.4 0 27.7 1.3 63.2 2.8-61.1-15.5-103.7-55-114.9-118.2-25 12.8-57.5 26.8-68.2.8-10.5-25.4 21.5-42.6 66.8-73.4.7-6.6 1.6-13.3 2.7-19.8-14.4-19.6-11.6-36.3-16.1-60.4-16.8 2.4-23.2-9.1-23.6-23.1.3-7.3 2.1-14.9 2.4-15.4 1.1-1.8 10.1-2 12.7-2.6 6-31.7 50.6-33.2 90.9-34.5 19.7-21.8 45.2-41.5 80.9-48.3C203.3 29 215.2 8.5 216.2 8c1.7-.8 21.2 4.3 26.3 23.2 5.2-8.8 18.3-11.4 19.6-10.7 1.1.6 6.4 15-4.9 25.9 40.3 3.5 72.2 24.7 96 50.7 36.1 1.5 71.8 5.9 77.1 34 2.7.6 11.6.8 12.7 2.6.3.5 2.1 8.1 2.4 15.4-.5 13.9-6.8 25.4-23.6 23.1-3.2 17.3-2.7 32.9-8.7 47.7 2.4 11.7 4 23.8 4.8 36.4 37 25.4 70.3 42.5 60.3 66.9zM207.4 159.9c.9-44-37.9-42.2-78.6-40.3-21.7 1-38.9 1.9-45.5 13.9-11.4 20.9 5.9 92.9 23.2 101.2 9.8 4.7 73.4 7.9 86.3-7.1 8.2-9.4 15-49.4 14.6-67.7zm52 58.3c-4.3-12.4-6-30.1-15.3-32.7-2-.5-9-.5-11 0-10 2.8-10.8 22.1-17 37.2 15.4 0 19.3 9.7 23.7 9.7 4.3 0 6.3-11.3 19.6-14.2zm135.7-84.7c-6.6-12.1-24.8-12.9-46.5-13.9-40.2-1.9-78.2-3.8-77.3 40.3-.5 18.3 5 58.3 13.2 67.8 13 14.9 76.6 11.8 86.3 7.1 15.8-7.6 36.5-78.9 24.3-101.3z"
+              />
+            </svg>
+            <span class="text-4xl inline-block text-yellow-400 font-medium">
+              Eatly
+            </span>
+          </a>
+        </div>
+        <div class="hidden sm:flex gap-5 flex-shrink-0 items-center">
+          <ul class="flex space-x-7 list-none">
+            <li>
+              <a
+                href="#"
+                class="text-xl font-medium hover:text-gray-600"
+                aria-current="page"
+              >
+                Program
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-xl font-medium hover:text-gray-600"
+                aria-current="page"
+              >
+                Service
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-xl font-medium hover:text-gray-600"
+                aria-current="page"
+              >
+                News
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-xl font-medium hover:text-gray-600"
+                aria-current="page"
+              >
+                About Us
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="hidden sm:block">
+          <button
+            type="button"
+            class="px-7 py-3 text-xl font-medium rounded-lg bg-gradient-to-r from-yellow-200 to-theme-color-four ring-2 ring-white/40 mx-auto"
+          >
+            Let's Talk
+          </button>
+        </div>
+      </div>
+
+      <div class="hidden sm:hidden" id="mobile-menu">
+        <ul
+          class="space-y-3 px-2 pb-3 pt-2 bg-white/40 shadow-sm text-gray-700 transition-all backdrop-blur-sm"
+        >
+          <li
+            class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:text-gray-500 cursor-pointer rounded-lg transition-all"
+          >
+            <a href="#" class="text-xl font-medium" aria-current="page">
+              Program
+            </a>
+          </li>
+          <li
+            class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:text-gray-500 cursor-pointer rounded-lg transition-all"
+          >
+            <a href="#" class="text-xl font-medium" aria-current="page">
+              Service
+            </a>
+          </li>
+          <li
+            class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:text-gray-500 cursor-pointer rounded-lg transition-all"
+          >
+            <a href="#" class="text-xl font-medium" aria-current="page">
+              News
+            </a>
+          </li>
+          <li
+            class="block px-4 py-2 text-gray-800 hover:bg-gray-200 hover:text-gray-500 cursor-pointer rounded-lg transition-all"
+          >
+            <a href="#" class="text-xl font-medium" aria-current="page">
+              About Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- NAVIGATION SECTION ENDS -->
+
+    <!-- HERO SECTION BEGINS -->
+    <main
+      class="relative h-[80vh] bg-hero-bg top-0 left-0 right-0 bg-no-repeat px-8 lg:px-0"
+    >
+      <div
+        class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center h-full"
+      >
+        <article class="space-y-4">
+          <h1 class="text-8xl font-bold text-white">
+            Changing your
+            <span class="text-theme-color-four">eating</span>
+            habits
+          </h1>
+          <p class="text-2xl text-gray-300">
+            Always take care of your health starting from the food menu that you
+            consumes everyday
+          </p>
+          <div class="flex items-center gap-12">
+            <button
+              type="button"
+              class="rounded-lg text-xl font-semibold ring-white/50 px-12 py-4 bg-gradient-to-r from-yellow-300 to-theme-color-four ring-2"
+            >
+              Explore Menu
+            </button>
+            <div class="flex items-center gap-4">
+              <button
+                type="button"
+                class="h-14 w-14 bg-white relative rounded-full ml-5 ring-2 ring-white/50 transform hover:scale-110 transition-all"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                  class="h-9 border-2 border-white/40 fill-theme-color-four absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform hover:scale-110 transition-all"
+                >
+                  <path
+                    d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z"
+                  />
+                </svg>
+              </button>
+              <span class="inline-block text-xl font-semibold text-white">
+                Watch Video
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- HERO SECTION ENDS -->
+
+    <!-- PROGRAMS SECTION BEGINS  -->
+    <section class="relative px-8 lg:px-0">
+      <div class="max-w-8xl mx-auto mt-20">
+        <header class="flex justify-between items-start mb-10">
+          <div class="inline-flex items-center space-x-5">
+            <span
+              class="inline-block h-16 w-16 text-theme-color-four relative ring-2 ring-white/40 bg-theme-color-one rounded-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+                class="fill-theme-color-four/80 absolute h-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+              >
+                <path
+                  d="M576 136c0 22.09-17.91 40-40 40c-.248 0-.4551-.1266-.7031-.1305l-50.52 277.9C482 468.9 468.8 480 453.3 480H122.7c-15.46 0-28.72-11.06-31.48-26.27L40.71 175.9C40.46 175.9 40.25 176 39.1 176c-22.09 0-40-17.91-40-40S17.91 96 39.1 96s40 17.91 40 40c0 8.998-3.521 16.89-8.537 23.57l89.63 71.7c15.91 12.73 39.5 7.544 48.61-10.68l57.6-115.2C255.1 98.34 247.1 86.34 247.1 72C247.1 49.91 265.9 32 288 32s39.1 17.91 39.1 40c0 14.34-7.963 26.34-19.3 33.4l57.6 115.2c9.111 18.22 32.71 23.4 48.61 10.68l89.63-71.7C499.5 152.9 496 144.1 496 136C496 113.9 513.9 96 536 96S576 113.9 576 136z"
+                />
+              </svg>
+            </span>
+            <h1 class="text-3xl font-semibold text-theme-color-one">
+              Our Best Programs
+            </h1>
+          </div>
+          <div class="flex items-center gap-5">
+            <button
+              type="button"
+              class="h-12 w-12 relative text-gray-800 bg-white rounded-full shadow-sm  border-2 border-theme-color-one/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 256 512"
+                class="h-5 fill-gray-800 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hover:fill-gray-400 transition-all"
+              >
+                <path
+                  d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="h-12 w-12 relative text-gray-300 bg-white rounded-full shadow-sm  border-2 border-theme-color-one/30"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 256 512"
+                class="h-5 fill-gray-800 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hover:fill-gray-400 transition-all"
+              >
+                <path
+                  d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"
+                />
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div
+          class="ring-8 relative mb-10 ring-white shadow-xl rounded-3xl grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-y-7 place-items-center lg:h-[14rem] p-4 custom-gradient"
+        >
+          <div class="space-y-3 w-48 h-48 mt-5 sm:mt-0 sm:h-auto">
+            <span
+              class="relative block h-16 w-16 rounded-lg bg-theme-color-one ring-2 ring-white/40 mx-auto"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+                class="fill-theme-color-four/80 h-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+              >
+                <path
+                  d="M352.4 243.8l-49.83 99.5c-6.009 12-23.41 11.62-28.92-.625L216.7 216.3l-30.05 71.75L88.55 288l176.4 182.2c12.66 13.07 33.36 13.07 46.03 0l176.4-182.2l-112.1 .0052L352.4 243.8zM495.2 62.86c-54.36-46.98-137.5-38.5-187.5 13.06L288 96.25L268.3 75.92C218.3 24.36 135.2 15.88 80.81 62.86C23.37 112.5 16.84 197.6 60.18 256h105l35.93-86.25c5.508-12.88 23.66-13.12 29.54-.375l58.21 129.4l49.07-98c5.884-11.75 22.78-11.75 28.67 0l27.67 55.25h121.5C559.2 197.6 552.6 112.5 495.2 62.86z"
+                />
+              </svg>
+            </span>
+            <h3 class="text-white font-bold text-2xl text-center">
+              Healthy Recipe
+            </h3>
+            <p
+              class="text-white text-sm text-center font-medium"
+              style="word-spacing: 0.1em;"
+            >
+              Healthier Recipes, from food & nutrition expert
+            </p>
+          </div>
+          <div class="space-y-3 w-48 h-48 sm:h-auto">
+            <span
+              class="block h-16 w-16 rounded-lg bg-theme-color-one ring-2 ring-white/40 mx-auto"
+            ></span>
+            <h3 class="text-white font-bold text-2xl text-center">
+              Healthy Meals
+            </h3>
+            <p
+              class="text-center text-white text-sm font-medium"
+              style="word-spacing: 0.1em;"
+            >
+              Learn how to become a meal-planning pro
+            </p>
+          </div>
+          <div class="space-y-3 w-48 h-48 sm:h-auto">
+            <span
+              class="block h-16 w-16 rounded-lg bg-theme-color-one ring-2 ring-white/40 mx-auto"
+            ></span>
+            <h3 class="text-white font-bold text-2xl text-center">
+              Healthy Eating
+            </h3>
+            <p
+              class="text-center text-white text-sm font-medium"
+              style="word-spacing: 0.1em;"
+            >
+              Eat healthy with our expert & inspiration tips
+            </p>
+          </div>
+          <div class="space-y-3 w-48 h-48 sm:h-auto">
+            <span
+              class="relative block h-16 w-16 rounded-lg bg-theme-color-one ring-2 ring-white/40 mx-auto"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                class="fill-theme-color-four/80 h-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+              >
+                <path
+                  d="M256.3-.0068C261.9-.0507 267.3 1.386 272.1 4.066L476.5 90.53C487.7 95.27 495.2 105.1 495.9 118.1C501.6 213.6 466.7 421.9 272.5 507.7C267.6 510.5 261.1 512.1 256.3 512C250.5 512.1 244.9 510.5 239.1 507.7C45.8 421.9 10.95 213.6 16.57 118.1C17.28 105.1 24.83 95.27 36.04 90.53L240.4 4.066C245.2 1.386 250.7-.0507 256.3-.0068H256.3zM266.1 363.4L364.2 263.6C392.2 234.7 390.5 186.6 358.1 159.5C331.8 135.8 291.5 140.2 266.1 166.5L256.4 176.1L245.9 166.5C221.4 140.2 180.2 135.8 153 159.5C121.5 186.6 119.8 234.7 147.8 263.6L244.2 363.4C251.2 369.5 260.8 369.5 266.1 363.4V363.4z"
+                />
+              </svg>
+            </span>
+
+            <h3 class="text-white font-bold text-2xl text-center">
+              Healthy Lives
+            </h3>
+            <p
+              class="text-center text-white text-sm font-medium"
+              style="word-spacing: 0.1em;"
+            >
+              Your life is your choice make yourself healthier
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-24">
+          <div
+            class="col-span-2 h-[26rem] rounded-2xl bg-gradient-to-br from-purple-600 to-purple-800"
+          ></div>
+          <div class="col-span-2">
+            <div class="space-y-4">
+              <div class="inline-flex items-center space-x-4">
+                <span
+                  class="h-16 w-16 block relative bg-gradient-to-br from-theme-color-two ring-2 ring-white/40 to-theme-color-one rounded-2xl"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    class="fill-theme-color-four h-12 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute"
+                  >
+                    <path
+                      d="M507.9 196.4l-104-153.8C399.4 35.95 391.1 32 384 32H127.1C120 32 112.6 35.95 108.1 42.56l-103.1 153.8c-6.312 9.297-5.281 21.72 2.406 29.89l231.1 246.2C243.1 477.3 249.4 480 256 480s12.94-2.734 17.47-7.547l232-246.2C513.2 218.1 514.2 205.7 507.9 196.4zM382.5 96.59L446.1 192h-140.1L382.5 96.59zM256 178.9L177.6 80h156.7L256 178.9zM129.5 96.59L205.1 192H65.04L129.5 96.59zM256 421L85.42 240h341.2L256 421z"
+                    />
+                  </svg>
+                </span>
+                <h1 class="text-4xl font-semibold text-theme-color-one">
+                  Our Value To Help You
+                </h1>
+              </div>
+              <p class="text-xl font-semibold text-black/40">
+                We always want to provide the best value for you and your
+                health, join us to maximize the benefits
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-14 mt-12">
+              <div
+                class="card-hover rounded-3xl space-y-4 w-full border-2 border-white/40 shadow relative p-8 bg-theme-color-six hover:custom-shadow-effect hover:scale-105 transition-all hover:bg-white/75 cursor-pointer h-44 sm:h-auto"
+              >
+                <span
+                  class="absolute left-8 -top-8 h-16 w-16 rounded-xl transition-all bg-theme-color-one block border-2 border-white/40"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512"
+                    class="fill-white h-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                  >
+                    <path
+                      d="M352.4 243.8l-49.83 99.5c-6.009 12-23.41 11.62-28.92-.625L216.7 216.3l-30.05 71.75L88.55 288l176.4 182.2c12.66 13.07 33.36 13.07 46.03 0l176.4-182.2l-112.1 .0052L352.4 243.8zM495.2 62.86c-54.36-46.98-137.5-38.5-187.5 13.06L288 96.25L268.3 75.92C218.3 24.36 135.2 15.88 80.81 62.86C23.37 112.5 16.84 197.6 60.18 256h105l35.93-86.25c5.508-12.88 23.66-13.12 29.54-.375l58.21 129.4l49.07-98c5.884-11.75 22.78-11.75 28.67 0l27.67 55.25h121.5C559.2 197.6 552.6 112.5 495.2 62.86z"
+                    />
+                  </svg>
+                </span>
+                <h3 class="text-theme-color-one text-2xl font-bold mt-6">
+                  Become Healthier
+                </h3>
+                <p class="text-xl font-semibold text-black/40">
+                  Immune will stronger it the body is healthier
+                </p>
+              </div>
+              <div
+                class="card-hover rounded-3xl space-y-4 w-full border-2 border-white/40 shadow relative p-8 bg-theme-color-six hover:custom-shadow-effect hover:scale-105 transition-all hover:bg-white/75 cursor-pointer h-44 sm:h-auto"
+              >
+                <span
+                  class="absolute left-8 -top-8 h-16 w-16 rounded-xl transition-all bg-theme-color-one block border-2 border-white/40"
+                ></span>
+                <h3 class="text-theme-color-one text-2xl font-bold mt-6">
+                  Increase Energy
+                </h3>
+                <p class="text-xl font-semibold text-black/40">
+                  Have enough energy help carry oyt a routine
+                </p>
+              </div>
+              <div
+                class="card-hover rounded-3xl space-y-4 w-full border-2 border-white/40 shadow relative p-8 bg-theme-color-six hover:custom-shadow-effect hover:scale-105 transition-all hover:bg-white/75 cursor-pointer h-44 sm:h-auto"
+              >
+                <span
+                  class="absolute left-8 -top-8 h-16 w-16 rounded-xl transition-all bg-theme-color-one block border-2 border-white/40"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    class="fill-white h-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                  >
+                    <path
+                      d="M256.3-.0068C261.9-.0507 267.3 1.386 272.1 4.066L476.5 90.53C487.7 95.27 495.2 105.1 495.9 118.1C501.6 213.6 466.7 421.9 272.5 507.7C267.6 510.5 261.1 512.1 256.3 512C250.5 512.1 244.9 510.5 239.1 507.7C45.8 421.9 10.95 213.6 16.57 118.1C17.28 105.1 24.83 95.27 36.04 90.53L240.4 4.066C245.2 1.386 250.7-.0507 256.3-.0068H256.3zM266.1 363.4L364.2 263.6C392.2 234.7 390.5 186.6 358.1 159.5C331.8 135.8 291.5 140.2 266.1 166.5L256.4 176.1L245.9 166.5C221.4 140.2 180.2 135.8 153 159.5C121.5 186.6 119.8 234.7 147.8 263.6L244.2 363.4C251.2 369.5 260.8 369.5 266.1 363.4V363.4z"
+                    />
+                  </svg>
+                </span>
+                <h3 class="text-theme-color-one text-2xl font-bold mt-6">
+                  Controlling Weight
+                </h3>
+                <p class="text-xl font-semibold text-black/40">
+                  Body will feel lighter and will not be easily tired
+                </p>
+              </div>
+              <div
+                class="card-hover rounded-3xl space-y-4 w-full border-2 border-white/40 shadow relative p-8 bg-theme-color-six hover:custom-shadow-effect hover:scale-105 transition-all hover:bg-white/75 cursor-pointer h-44 sm:h-auto"
+              >
+                <span
+                  class="absolute left-8 -top-8 h-16 w-16 rounded-xl transition-all bg-theme-color-one block border-2 border-white/40"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512"
+                    class="fill-white h-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+                  >
+                    <path
+                      d="M381.2 150.3L524.9 171.5C536.8 173.2 546.8 181.6 550.6 193.1C554.4 204.7 551.3 217.3 542.7 225.9L438.5 328.1L463.1 474.7C465.1 486.7 460.2 498.9 450.2 506C440.3 513.1 427.2 514 416.5 508.3L288.1 439.8L159.8 508.3C149 514 135.9 513.1 126 506C116.1 498.9 111.1 486.7 113.2 474.7L137.8 328.1L33.58 225.9C24.97 217.3 21.91 204.7 25.69 193.1C29.46 181.6 39.43 173.2 51.42 171.5L195 150.3L259.4 17.97C264.7 6.954 275.9-.0391 288.1-.0391C300.4-.0391 311.6 6.954 316.9 17.97L381.2 150.3z"
+                    />
+                  </svg>
+                </span>
+                <h3 class="text-theme-color-one text-2xl font-bold mt-6">
+                  Become Happier
+                </h3>
+                <p class="text-xl font-semibold text-black/40">
+                  Living a healthy life also increase self-confidence
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PROGRAMS SECTION ENDS  -->
+
+    <!--  BEGINS-->
+    <section class="relative px-8 lg:px-0 top-24">
+      <div class="max-w-8xl mx-auto">
+        <div
+          class="ring-8 relative mb-10 ring-white rounded-3xl flex items-center flex-col space-y-8 p-8 custom-gradient"
+        >
+          <span
+            class="relative block h-16 w-16 rounded-lg bg-theme-color-one ring-2 ring-white/40 mx-auto"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="fill-theme-color-four h-10 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
+            >
+              <path
+                d="M64 496C64 504.8 56.75 512 48 512h-32C7.25 512 0 504.8 0 496V32c0-17.75 14.25-32 32-32s32 14.25 32 32V496zM476.3 0c-6.365 0-13.01 1.35-19.34 4.233c-45.69 20.86-79.56 27.94-107.8 27.94c-59.96 0-94.81-31.86-163.9-31.87C160.9 .3055 131.6 4.867 96 15.75v350.5c32-9.984 59.87-14.1 84.85-14.1c73.63 0 124.9 31.78 198.6 31.78c31.91 0 68.02-5.971 111.1-23.09C504.1 355.9 512 344.4 512 332.1V30.73C512 11.1 495.3 0 476.3 0z"
+              />
+            </svg>
+          </span>
+          <div class="w-1/2 space-y-11 text-center">
+            <h2 class="text-5xl font-semibold text-white">
+              Get Started With
+              <span class="text-theme-color-four">Eatly</span>
+            </h2>
+            <p class="text-2xl text-medium text-theme-color-five">
+              Discover tips & news for your health from experts and get the best
+              discounts by getting started
+            </p>
+          </div>
+          <button
+            type="button"
+            class="rounded-xl text-2xl font-semibold ring-white/50 px-14 py-4 bg-gradient-to-r from-yellow-300 to-theme-color-four ring-2 text-gray-600"
+          >
+            Get Started
+          </button>
+        </div>
+
+        <div class="mx-auto">
+          <div class="space-y-8">
+            <div class="flex justify-between items-center">
+              <header class="space-y-4 w-[30rem]">
+                <div class="inline-flex items-center space-x-4">
+                  <span
+                    class="h-16 w-16 block relative bg-gradient-to-br from-theme-color-two ring-2 ring-white/40 to-theme-color-one rounded-2xl"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                      class="fill-theme-color-four h-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute"
+                    >
+                      <path
+                        d="M152.1 38.16C161.9 47.03 162.7 62.2 153.8 72.06L81.84 152.1C77.43 156.9 71.21 159.8 64.63 159.1C58.05 160.2 51.69 157.6 47.03 152.1L7.029 112.1C-2.343 103.6-2.343 88.4 7.029 79.03C16.4 69.66 31.6 69.66 40.97 79.03L63.08 101.1L118.2 39.94C127 30.09 142.2 29.29 152.1 38.16V38.16zM152.1 198.2C161.9 207 162.7 222.2 153.8 232.1L81.84 312.1C77.43 316.9 71.21 319.8 64.63 319.1C58.05 320.2 51.69 317.6 47.03 312.1L7.029 272.1C-2.343 263.6-2.343 248.4 7.029 239C16.4 229.7 31.6 229.7 40.97 239L63.08 261.1L118.2 199.9C127 190.1 142.2 189.3 152.1 198.2V198.2zM224 96C224 78.33 238.3 64 256 64H480C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H256C238.3 128 224 113.7 224 96V96zM224 256C224 238.3 238.3 224 256 224H480C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H256C238.3 288 224 273.7 224 256zM160 416C160 398.3 174.3 384 192 384H480C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416zM0 416C0 389.5 21.49 368 48 368C74.51 368 96 389.5 96 416C96 442.5 74.51 464 48 464C21.49 464 0 442.5 0 416z"
+                      />
+                    </svg>
+                  </span>
+                  <h1 class="text-4xl font-semibold text-theme-color-one">
+                    Try Our Healthy Menu
+                  </h1>
+                </div>
+                <p class="text-lg font-semibold text-black/40">
+                  We provide a variety of healthy recipes that have been curated
+                  by our best nutritionists for you
+                </p>
+              </header>
+              <div class="flex items-center gap-5">
+                <button
+                  type="button"
+                  class="h-12 w-12 relative text-gray-800 bg-white rounded-full shadow-sm border-2 border-theme-color-one/30"
+                >
+                  <svg
+                    class="h-5 fill-gray-800 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hover:fill-gray-400 transition-all"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 512"
+                  >
+                    <path
+                      d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  class="h-12 w-12 relative text-gray-300 bg-white rounded-full shadow-sm border-2 border-theme-color-one/30"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 512"
+                    class="h-5 fill-gray-800 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hover:fill-gray-400 transition-all"
+                  >
+                    <path
+                      d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              <ul class="space-y-4" id="menu-list">
+                <li
+                  class="hover:custom-shadow-effect hover:scale-105 transition-all cursor-pointer px-5 py-5 rounded-3xl bg-theme-color-six ring-2 ring-white/70 shadow-md flex items-center gap-x-6 hover:bg-white/75 h-32 list-card"
+                >
+                  <span
+                    class="h-16 w-16 block relative bg-gradient-to-br from-theme-color-two ring-2 ring-white/40 to-theme-color-one rounded-2xl"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                      class="fill-white h-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute transition-all"
+                    >
+                      <path
+                        d="M256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512zM232 256C232 264 236 271.5 242.7 275.1L338.7 339.1C349.7 347.3 364.6 344.3 371.1 333.3C379.3 322.3 376.3 307.4 365.3 300L280 243.2V120C280 106.7 269.3 96 255.1 96C242.7 96 231.1 106.7 231.1 120L232 256z"
+                      />
+                    </svg>
+                  </span>
+                  <h3 class="text-theme-color-one text-2xl font-bold">
+                    Breakfast Recipes
+                  </h3>
+                </li>
+                <li
+                  class="hover:custom-shadow-effect hover:scale-105 transition-all cursor-pointer px-5 py-5 rounded-3xl bg-theme-color-six ring-2 ring-white/70 shadow-md flex items-center gap-x-6 hover:bg-white/75 h-32 list-card"
+                >
+                  <span
+                    class="h-16 w-16 block relative bg-gradient-to-br from-theme-color-two ring-2 ring-white/40 to-theme-color-one rounded-2xl"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                      class="fill-white h-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute transition-all rotate-90"
+                    >
+                      <path
+                        d="M511.6 36.86l-64 415.1c-1.5 9.734-7.375 18.22-15.97 23.05c-4.844 2.719-10.27 4.097-15.68 4.097c-4.188 0-8.319-.8154-12.29-2.472l-122.6-51.1l-50.86 76.29C226.3 508.5 219.8 512 212.8 512C201.3 512 192 502.7 192 491.2v-96.18c0-7.115 2.372-14.03 6.742-19.64L416 96l-293.7 264.3L19.69 317.5C8.438 312.8 .8125 302.2 .0625 289.1s5.469-23.72 16.06-29.77l448-255.1c10.69-6.109 23.88-5.547 34 1.406S513.5 24.72 511.6 36.86z"
+                      />
+                    </svg>
+                  </span>
+                  <h3 class="text-theme-color-one text-2xl font-bold">
+                    Low-Calorie Recipes
+                  </h3>
+                </li>
+                <li
+                  class="hover:custom-shadow-effect hover:scale-105 transition-all cursor-pointer px-5 py-5 rounded-3xl bg-theme-color-six ring-2 ring-white/70 shadow-md flex items-center gap-x-6 hover:bg-white/75 h-32 list-card"
+                >
+                  <span
+                    class="h-16 w-16 block relative bg-gradient-to-br from-theme-color-two ring-2 ring-white/40 to-theme-color-one rounded-2xl"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                      class="fill-white h-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute transition-all"
+                    >
+                      <path
+                        d="M160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32zM0 192H448V464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192zM64 304C64 312.8 71.16 320 80 320H112C120.8 320 128 312.8 128 304V272C128 263.2 120.8 256 112 256H80C71.16 256 64 263.2 64 272V304zM192 304C192 312.8 199.2 320 208 320H240C248.8 320 256 312.8 256 304V272C256 263.2 248.8 256 240 256H208C199.2 256 192 263.2 192 272V304zM336 256C327.2 256 320 263.2 320 272V304C320 312.8 327.2 320 336 320H368C376.8 320 384 312.8 384 304V272C384 263.2 376.8 256 368 256H336zM64 432C64 440.8 71.16 448 80 448H112C120.8 448 128 440.8 128 432V400C128 391.2 120.8 384 112 384H80C71.16 384 64 391.2 64 400V432zM208 384C199.2 384 192 391.2 192 400V432C192 440.8 199.2 448 208 448H240C248.8 448 256 440.8 256 432V400C256 391.2 248.8 384 240 384H208zM320 432C320 440.8 327.2 448 336 448H368C376.8 448 384 440.8 384 432V400C384 391.2 376.8 384 368 384H336C327.2 384 320 391.2 320 400V432z"
+                      />
+                    </svg>
+                  </span>
+                  <h3 class="text-theme-color-one text-2xl font-bold">
+                    Holiday Recipes
+                  </h3>
+                </li>
+                <li
+                  class="hover:custom-shadow-effect hover:scale-105 transition-all duration-200 cursor-pointer px-5 py-5 rounded-3xl bg-theme-color-six ring-2 ring-white/70 shadow-md flex items-center gap-x-6 hover:bg-white/75 h-32 list-card"
+                >
+                  <span
+                    class="h-16 w-16 block relative bg-gradient-to-br from-theme-color-two ring-2 ring-white/40 to-theme-color-one rounded-2xl"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                      class="fill-white h-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute transition-all"
+                    >
+                      <path
+                        d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z"
+                      />
+                    </svg>
+                  </span>
+                  <h3 class="text-theme-color-one text-2xl font-bold">
+                    Restriction Recipes
+                  </h3>
+                </li>
+              </ul>
+              <div
+                class="h-[26rem] rounded-2xl bg-gradient-to-br from-purple-600 to-purple-800"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  ENDS-->
+
+    <!-- TESTIMONIALS BEGINS -->
+    <section class="relative px-8 lg:px-0 top-44">
+      <div class="max-w-8xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div
+            class="h-[26rem] rounded-2xl bg-gradient-to-br from-purple-600 to-purple-800"
+          ></div>
+          <div class="space-y-12">
+            <header class="space-y-4">
+              <div class="inline-flex items-center space-x-4">
+                <span
+                  class="h-16 w-16 block relative bg-gradient-to-br from-theme-color-two ring-2 ring-white/40 to-theme-color-one rounded-2xl"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                    class="fill-theme-color-four h-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute"
+                  >
+                    <path
+                      d="M256 417.1c-16.38 0-32.88-4.1-46.88-15.12L0 250.9v213.1C0 490.5 21.5 512 48 512h416c26.5 0 48-21.5 48-47.1V250.9l-209.1 151.1C288.9 412 272.4 417.1 256 417.1zM493.6 163C484.8 156 476.4 149.5 464 140.1v-44.12c0-26.5-21.5-48-48-48l-77.5 .0016c-3.125-2.25-5.875-4.25-9.125-6.5C312.6 29.13 279.3-.3732 256 .0018C232.8-.3732 199.4 29.13 182.6 41.5c-3.25 2.25-6 4.25-9.125 6.5L96 48c-26.5 0-48 21.5-48 48v44.12C35.63 149.5 27.25 156 18.38 163C6.75 172 0 186 0 200.8v10.62l96 69.37V96h320v184.7l96-69.37V200.8C512 186 505.3 172 493.6 163zM176 255.1h160c8.836 0 16-7.164 16-15.1c0-8.838-7.164-16-16-16h-160c-8.836 0-16 7.162-16 16C160 248.8 167.2 255.1 176 255.1zM176 191.1h160c8.836 0 16-7.164 16-16c0-8.838-7.164-15.1-16-15.1h-160c-8.836 0-16 7.162-16 15.1C160 184.8 167.2 191.1 176 191.1z"
+                    />
+                  </svg>
+                </span>
+                <h1 class="text-4xl font-semibold text-theme-color-one">
+                  Testimonials About Us
+                </h1>
+              </div>
+              <p class="text-2xl font-semibold text-black/40">
+                In the smallest case we always gives your best, find out what
+                others users have to say about us
+              </p>
+            </header>
+            <div
+              class="rounded-3xl space-y-4 w-full border-2 border-white/40 shadow relative p-8 bg-theme-color-six h-auto md:h-44 sm:h-auto"
+            >
+              <span
+                class="absolute left-8 -top-8 h-16 w-16 rounded-xl transition-all bg-theme-color-one block border-2 border-white/40"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="fill-white h-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute"
+                >
+                  <path
+                    d="M511.1 63.1v287.1c0 35.25-28.75 63.1-64 63.1h-144l-124.9 93.68c-7.875 5.75-19.12 .0497-19.12-9.7v-83.98h-96c-35.25 0-64-28.75-64-63.1V63.1c0-35.25 28.75-63.1 64-63.1h384C483.2 0 511.1 28.75 511.1 63.1z"
+                  />
+                </svg>
+              </span>
+              <p class="text-xl font-semibold text-black/40">
+                <em>
+                  "Eatly really helps me to maintain food intake, is perfect for
+                  those who want to diet or just make the body more healthy. In
+                  addition Eatly helped me to create a menu that is suitable for
+                  the family.
+                </em>
+              </p>
+              <div class="flex justify-between items-center">
+                <div>
+                  <h3 class="text-theme-color-one text-2xl font-bold mt-6">
+                    Rara Sanchez
+                  </h3>
+                  <p class="text-lg font-medium text-theme-color-two">
+                    Freelancer
+                  </p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <button
+                    type="button"
+                    class="h-12 w-12 relative text-gray-800 bg-white rounded-full shadow-sm border-2 border-theme-color-one/30"
+                  >
+                    <svg
+                      class="h-5 fill-gray-800 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hover:fill-gray-400 transition-all"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 256 512"
+                    >
+                      <path
+                        d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    class="h-12 w-12 relative text-gray-300 bg-white rounded-full shadow-sm border-2 border-theme-color-one/30"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 256 512"
+                      class="h-5 fill-gray-800 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hover:fill-gray-400 transition-all"
+                    >
+                      <path
+                        d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TESTIMONIALS ENDS -->
+
+    <!-- FOOTER BEGINS -->
+    <footer class="relative top-52 bg-theme-color-six">
+      <div class="max-w-8xl mx-auto py-16 px-6 lg:px-0">
+        <div class="flex items-start justify-between flex-col lg:flex-row">
+          <div class="flex sm:flex-none items-center sm:justify-start flex-col mx-auto lg:mx-0 sm:w-1/2 text-center lg:text-justify lg:w-1/5 ">
+            <div class="space-x-3 inline-flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 512"
+                class="fill-gray-600 h-12"
+              >
+                <path
+                  d="M313.2 47.5c1.2-13 21.3-14 36.6-8.7.9.3 26.2 9.7 19 15.2-27.9-7.4-56.4 18.2-55.6-6.5zm-201 6.9c30.7-8.1 62 20 61.1-7.1-1.3-14.2-23.4-15.3-40.2-9.6-1 .3-28.7 10.5-20.9 16.7zM319.4 160c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm-159.7 0c-8.8 0-16 7.2-16 16s7.2 16 16 16 16-7.2 16-16-7.2-16-16-16zm318.5 163.2c-9.9 24-40.7 11-63.9-1.2-13.5 69.1-58.1 111.4-126.3 124.2.3.9-2-.1 24 1 33.6 1.4 63.8-3.1 97.4-8-19.8-13.8-11.4-37.1-9.8-38.1 1.4-.9 14.7 1.7 21.6 11.5 8.6-12.5 28.4-14.8 30.2-13.6 1.6 1.1 6.6 20.9-6.9 34.6 4.7-.9 8.2-1.6 9.8-2.1 2.6-.8 17.7 11.3 3.1 13.3-14.3 2.3-22.6 5.1-47.1 10.8-45.9 10.7-85.9 11.8-117.7 12.8l1 11.6c3.8 18.1-23.4 24.3-27.6 6.2.8 17.9-27.1 21.8-28.4-1l-.5 5.3c-.7 18.4-28.4 17.9-28.3-.6-7.5 13.5-28.1 6.8-26.4-8.5l1.2-12.4c-36.7.9-59.7 3.1-61.8 3.1-20.9 0-20.9-31.6 0-31.6 2.4 0 27.7 1.3 63.2 2.8-61.1-15.5-103.7-55-114.9-118.2-25 12.8-57.5 26.8-68.2.8-10.5-25.4 21.5-42.6 66.8-73.4.7-6.6 1.6-13.3 2.7-19.8-14.4-19.6-11.6-36.3-16.1-60.4-16.8 2.4-23.2-9.1-23.6-23.1.3-7.3 2.1-14.9 2.4-15.4 1.1-1.8 10.1-2 12.7-2.6 6-31.7 50.6-33.2 90.9-34.5 19.7-21.8 45.2-41.5 80.9-48.3C203.3 29 215.2 8.5 216.2 8c1.7-.8 21.2 4.3 26.3 23.2 5.2-8.8 18.3-11.4 19.6-10.7 1.1.6 6.4 15-4.9 25.9 40.3 3.5 72.2 24.7 96 50.7 36.1 1.5 71.8 5.9 77.1 34 2.7.6 11.6.8 12.7 2.6.3.5 2.1 8.1 2.4 15.4-.5 13.9-6.8 25.4-23.6 23.1-3.2 17.3-2.7 32.9-8.7 47.7 2.4 11.7 4 23.8 4.8 36.4 37 25.4 70.3 42.5 60.3 66.9zM207.4 159.9c.9-44-37.9-42.2-78.6-40.3-21.7 1-38.9 1.9-45.5 13.9-11.4 20.9 5.9 92.9 23.2 101.2 9.8 4.7 73.4 7.9 86.3-7.1 8.2-9.4 15-49.4 14.6-67.7zm52 58.3c-4.3-12.4-6-30.1-15.3-32.7-2-.5-9-.5-11 0-10 2.8-10.8 22.1-17 37.2 15.4 0 19.3 9.7 23.7 9.7 4.3 0 6.3-11.3 19.6-14.2zm135.7-84.7c-6.6-12.1-24.8-12.9-46.5-13.9-40.2-1.9-78.2-3.8-77.3 40.3-.5 18.3 5 58.3 13.2 67.8 13 14.9 76.6 11.8 86.3 7.1 15.8-7.6 36.5-78.9 24.3-101.3z"
+                />
+              </svg>
+              <span class="text-4xl inline-block text-yellow-400 font-medium">
+                Eatly
+              </span>
+            </div>
+            <p class="text-xl font-medium text-theme-color-two">
+              We have a mission to make people around the world better through a
+              healthier diet
+            </p>
+          </div>
+          <div class="flex items-start justify-between gap-10 flex-wrap w-full mt-10 lg:mt-0 lg:space-x-12 lg:gap-0 lg:w-auto">
+            <div class="space-y-4">
+              <h1 class="text-2xl text-theme-color-one font-semibold">About</h1>
+              <ul class="space-y-8 pb-3 pt-2">
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    About Us
+                  </a>
+                </li>
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    Features
+                  </a>
+                </li>
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    News & Blog
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4">
+              <h1 class="text-2xl text-theme-color-one font-semibold">
+                Movement
+              </h1>
+              <ul class="space-y-8 pb-3 pt-2">
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    What Eatly
+                  </a>
+                </li>
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    Support Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4">
+              <h1 class="text-2xl text-theme-color-one font-semibold">
+                Company
+              </h1>
+              <ul class="space-y-8 pb-3 pt-2">
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    Why Eatly
+                  </a>
+                </li>
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    Capital
+                  </a>
+                </li>
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    Security
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-4">
+              <h1 class="text-2xl text-theme-color-one font-semibold">
+                Support
+              </h1>
+              <ul class="space-y-8 pb-3 pt-2">
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    FAQs
+                  </a>
+                </li>
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    Support Center
+                  </a>
+                </li>
+                <li
+                  class="block text-theme-color-two cursor-pointer transition-all"
+                >
+                  <a href="#" class="text-xl font-medium" aria-current="page">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center flex-col lg:flex-row justify-between mt-10 gap-y-4 lg:gap-y-0">
+          <div class="">
+            <p class="text-xl font-medium text-theme-color-two">
+              &copy; 2023 Eatly, All rights reserved
+            </p>
+          </div>
+          <div class="inline-flex items-center gap-8">
+            <p class="text-xl font-medium text-theme-color-two">
+              <a href="#">Terms & Agreements</a>
+            </p>
+            <p class="text-xl font-medium text-theme-color-two">
+              <a href="#">Privacy Policy</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER ENDS -->
+
+    <script src="/public/js/main.js"></script>
+  </body>
+</html>
