@@ -844,6 +844,10 @@ body {
   width: 100%;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .max-w-8xl {
   max-width: 88rem;
 }
@@ -937,6 +941,10 @@ body {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-x-6 {
@@ -1595,6 +1603,10 @@ body {
 @media (min-width: 768px) {
   .md\:grid {
     display: grid;
+  }
+
+  .md\:w-auto {
+    width: auto;
   }
 
   .md\:grid-cols-2 {
