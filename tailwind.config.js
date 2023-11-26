@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-bg': "url('/public/assets/images/hero-bg.jpg')",
+        'hero-bg': "url('./public/assets/images/hero-bg.jpg')",
       },
       maxWidth: {
         '8xl': '88rem',

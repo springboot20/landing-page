@@ -887,10 +887,6 @@ body {
   place-content: center;
 }
 
-.place-items-start {
-  place-items: start;
-}
-
 .place-items-center {
   place-items: center;
 }
@@ -1110,7 +1106,7 @@ body {
 }
 
 .bg-hero-bg {
-  background-image: url('/public/assets/images/hero-bg.jpg');
+  background-image: url('./public/assets/images/hero-bg.jpg');
 }
 
 .from-purple-600 {
@@ -1537,10 +1533,6 @@ body {
 @media (min-width: 480px) {
   .xs\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .xs\:text-justify {
-    text-align: justify;
   }
 }
 
