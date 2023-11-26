@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* eff0f4  */
+
+@layer base {
+  @font-face {
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;0,900;1,900&display=swap');
+  }
+
+  @font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url('../public/assets/fonts/Roboto-Bold.ttf');
+  }
+
+  * {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body {
+    @apply bg-[#f2f2f2];
+  }
+}
+
+@layer components {
+  .nav-bg {
+    @apply bg-white/40 shadow-sm text-gray-700 transition-all backdrop-blur-sm;
+  }
+
+  .nav-bg > div ul li a {
+    @apply text-gray-800;
+  }
+
+  .custom-shadow {
+    box-shadow: 0 0 0.15rem hsl(209, 23%, 22%);
+  }
+
+  .custom-shadow-effect {
+    @apply bg-theme-color-five;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.05), 0 5px 5px rgba(0, 0, 0, 0.05), 0 0px 5px rgba(0, 0, 0, 0.09);
+  }
+
+  .custom-gradient {
+    background-image: linear-gradient(#9555ea, #955cf9, #a876fd);
+    box-shadow: 0 0 0.15rem 0 #8552f2;
+  }
+
+  .card-hover:hover > h3,
+  .list-card:hover > h3 {
+    @apply text-theme-color-two;
+  }
+
+  .card-hover:hover span,
+  .list-card:hover span {
+    @apply bg-gradient-to-r from-yellow-300 to-theme-color-four shadow-theme-color-four/50 shadow-md;
+  }
+
+  .dish-type {
+    @apply bg-gradient-to-br from-white/30 to-white/60;
+    box-shadow:  5px 5px 5px rgba(0, 0, 0, 0.05), 0 5px 5px rgba(0, 0, 0, 0.05), 0 5px 5px rgba(0, 0, 0, 0.05),
+       0 5px 5px rgba(255, 255, 255, 0.09);
+  }
+
+  .dish-type:hover > div button{
+    @apply bg-gradient-to-tr from-theme-color-four/50 to-theme-color-four border-white/50;
+  }
+}
