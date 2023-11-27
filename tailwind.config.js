@@ -2,12 +2,9 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
-  content: ['./index.html', './public/**/*.js', './public/**/*.svg'],
+  content: ['./public/index.html', './public/**/*.js', './public/**/*.svg'],
   theme: {
     extend: {
-      backgroundImage: {
-        'hero-bg': "url('/public/assets/images/hero-bg.jpg')",
-      },
       maxWidth: {
         '8xl': '88rem',
       },
